@@ -1,0 +1,28 @@
+.AppBar {
+  width: 85%;
+  margin-left: auto;
+  margin-right: auto;
+  height: 70px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: white 1px solid;
+}
+
+.AppBar_nav {
+  width: fit-content;
+}
+
+.AppBar_link {
+  margin: 0 7px 0;
+  font-weight: 500;
+  color: white;
+  text-decoration: none;
+  transition: color 0.5s 0s ease;
+}
+
+.AppBar_link:hover,
+.AppBar_link:focus {
+  color: rgb(149, 241, 206);
+}
