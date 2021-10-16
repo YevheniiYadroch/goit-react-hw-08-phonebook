@@ -15,8 +15,8 @@ function HomeView() {
                 :
                 <>
                     <Login/>
-                    <p>Еще нет аккаунта на нашем сервисе?</p>
-                    <Link to="/register">Зарегистрироваться</Link>
+                    <p className="HomeView_text">Еще нет аккаунта на нашем сервисе?</p>
+                    <Link className="HomeView_contacts HomeView_contacts_register" to="/register">Зарегистрироваться</Link>
                 </>
             }
         </div>

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import {authOperations} from '../../redux/auth'
+import { authOperations } from '../../redux/auth'
+import TextField from '@mui/material/TextField';
 import './Register.css';
 
 function Register() {
@@ -35,24 +36,50 @@ function Register() {
     }
 
     return (
-        <>
-            <h2>Регистрация</h2>
+        <div className="RegisterForm_wrapper">
+            <h2 className="RegisterForm_header">Регистрация</h2>
             <form className="RegisterForm" onReset={handleFormReset} onSubmit={handleSubmit}>
-                <label htmlFor="name" className="RegisterForm__name">Name</label>
-                <input
-                    className="RegisterForm__input"
+                <TextField
+                    label="Name"
+                    variant="standard"
+                    className="LoginForm__input"
                     value={name}
-                    type="text"
+                    type="name"
                     name="name"
                     id="name"
-                    pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
-                    title="Имя может состоять только из букв, апострофа, тире и пробелов. Например Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan и т. п."
+                    pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+                    title="Введите Ваше имя"
                     required
                     onChange={handleChange}
+                    sx={{
+                        '& .MuiInputLabel-root': {
+                            color: 'white',
+                        },
+                        '& .MuiInput-root:before': {
+                            borderBottom: "1px solid white"
+                        },
+                        '& .css-1480iag-MuiInputBase-root-MuiInput-root:hover:not(.Mui-disabled):before': {
+                            borderBottom: "2px solid white"
+                        },
+                        '& .css-1480iag-MuiInputBase-root-MuiInput-root:after': {
+                            borderBottom: "2px solid rgb(149, 241, 206)"
+                        },
+                        '& .css-1c2i806-MuiFormLabel-root-MuiInputLabel-root.Mui-focused': {
+                            color: 'rgb(149, 241, 206)'
+                        },
+                        '& .css-wgai2y-MuiFormLabel-asterisk': {
+                            display: 'none'
+                        },
+                        '& .css-1480iag-MuiInputBase-root-MuiInput-root': {
+                            color: 'rgb(149, 241, 206)'
+                        }
+                    }}
+                    autoComplete="none"
                 />
-                <label htmlFor="email" className="RegisterForm__email">E-mail</label>
-                <input
-                    className="RegisterForm__input"
+                <TextField
+                    label="E-mail"
+                    variant="standard"
+                    className="LoginForm__input"
                     value={email}
                     type="email"
                     name="email"
@@ -61,22 +88,71 @@ function Register() {
                     title="Введите Ваш реальный адресс электронной почты"
                     required
                     onChange={handleChange}
+                    sx={{
+                        '& .MuiInputLabel-root': {
+                            color: 'white',
+                        },
+                        '& .MuiInput-root:before': {
+                            borderBottom: "1px solid white"
+                        },
+                        '& .css-1480iag-MuiInputBase-root-MuiInput-root:hover:not(.Mui-disabled):before': {
+                            borderBottom: "2px solid white"
+                        },
+                        '& .css-1480iag-MuiInputBase-root-MuiInput-root:after': {
+                            borderBottom: "2px solid rgb(149, 241, 206)"
+                        },
+                        '& .css-1c2i806-MuiFormLabel-root-MuiInputLabel-root.Mui-focused': {
+                            color: 'rgb(149, 241, 206)'
+                        },
+                        '& .css-wgai2y-MuiFormLabel-asterisk': {
+                            display: 'none'
+                        },
+                        '& .css-1480iag-MuiInputBase-root-MuiInput-root': {
+                            color: 'rgb(149, 241, 206)'
+                        }
+                    }}
+                    autoComplete="none"
                 />
-                <label htmlFor="password" className="RegisterForm__password">Password</label>
-                <input
-                    className="RegisterForm__input"
+                <TextField
+                    label="Password"
+                    className="LoginForm__input"
+                    variant="standard"
                     value={password}
                     type="password"
                     name="password"
                     id="password"
                     // pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
-                    title="Пароль должен содержать хотя бы одну цифру, буквы верхнего и нижнего регистра и состоять из не менее чем 8 символов"
+                    title="Пароль должен содержать не менее чем 7 символов"
                     required
                     onChange={handleChange}
+                    sx={{
+                        '& .MuiInputLabel-root': {
+                            color: 'white',
+                        },
+                        '& .MuiInput-root:before': {
+                            borderBottom: "1px solid white"
+                        },
+                        '& .css-1480iag-MuiInputBase-root-MuiInput-root:hover:not(.Mui-disabled):before': {
+                            borderBottom: "2px solid white"
+                        },
+                        '& .css-1480iag-MuiInputBase-root-MuiInput-root:after': {
+                            borderBottom: "2px solid rgb(149, 241, 206)"
+                        },
+                        '& .css-1c2i806-MuiFormLabel-root-MuiInputLabel-root.Mui-focused': {
+                            color: 'rgb(149, 241, 206)'
+                        },
+                        '& .css-wgai2y-MuiFormLabel-asterisk': {
+                            display: 'none'
+                        },
+                        '& .css-1480iag-MuiInputBase-root-MuiInput-root': {
+                            color: 'rgb(149, 241, 206)'
+                        }
+                    }}
+                    autoComplete="none"
                 />
                 <button type="submit"  className="RegisterForm__button">Зарегистрироваться</button>
             </form>
-        </>
+        </div>
         )
 }
 

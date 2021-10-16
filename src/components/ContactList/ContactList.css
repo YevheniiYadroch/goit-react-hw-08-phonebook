@@ -1,16 +1,39 @@
 .ContactList__text {
   display: inline-block;
   margin-right: 30px;
+  font-size: 20px;
+  font-weight: 400;
 }
 
 .ContactList__button {
-  border: solid 1px gray;
+  margin: 0 7px 0;
+  width: 80px;
+  height: 35px;
+  background-color: transparent;
+  color: white;
+  border: white 2px solid;
   border-radius: 5px;
-  background-color: azure;
-  transition: background-color 0.5s 0s ease;
+  cursor: pointer;
+  font-weight: 550;
+  font-size: 15px;
+  transition: border, color 0.5s 0s ease;
 }
 
 .ContactList__button:hover,
 .ContactList__button:focus {
-  background-color: aqua;
+  color: rgb(149, 241, 206);
+  border: rgb(149, 241, 206) 2px solid;
+}
+
+.ContactList {
+  color: white;
+  list-style: none;
+  padding: 0;
+}
+
+.ContactList__item {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 }

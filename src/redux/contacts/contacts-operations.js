@@ -11,12 +11,7 @@ export const fetchContacts = createAsyncThunk(
     }
 );
 
-export const pushContact = e => async dispatch => {
-    const contact = {
-        name: e.target.children.name.value,
-        number: e.target.children.number.value
-    };
-
+export const pushContact = contact => async dispatch => {
     await axios
         .post('/contacts', contact)
         .then(({ data }) => dispatch(pushContactSuccess(data)))

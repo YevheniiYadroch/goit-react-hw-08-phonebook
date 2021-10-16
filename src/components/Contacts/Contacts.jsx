@@ -15,9 +15,9 @@ function Contacts () {
 
   return (
       <div className="Contacts">
-        <h1>Phonebook</h1>
+        <h2 className="Contacts_header">Phonebook</h2>
         <ContactForm />
-        <h2>Contacts</h2>
+        <h3 className="Contacts_header2">Contacts</h3>
         <Filter />
         <ContactList />
       </div>

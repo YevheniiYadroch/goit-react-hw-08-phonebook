@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { connect } from 'react-redux';
 import { pushContact } from '../../redux/contacts/contacts-operations';
+import TextField from '@mui/material/TextField';
 import { getContacts } from '../../redux/contacts/contacts-selectors';
 import './ContactForm.css';
 
@@ -27,43 +28,95 @@ function ContactForm({ contacts }) {
 
     const handleSubmit = e => {
         e.preventDefault();
+        const contact = {
+            name: name,
+            number: number,
+        }
         const form = e.target;
-        if (contacts.some(item => item.name.toLowerCase() === e.target.children.name.value.toLowerCase())) {
-            alert(`${e.target.children.name.value} is already in contacts`);
+        if (contacts.some(item => item.name.toLowerCase() === name.toLowerCase())) {
+            alert(`${name} is already in contacts`);
             form.reset();
             return;
         }
-        dispatch(pushContact(e));
+        dispatch(pushContact(contact));
         form.reset();
     }
 
         return (
             <form className="ContactForm" onReset={handleFormReset} onSubmit={handleSubmit}>
-                <label htmlFor="name" className="ContactForm__name">Name</label>
-                <input
-                    className="ContactForm__input"
+                <TextField
+                    label="Name"
+                    variant="standard"
+                    className="LoginForm__input"
                     value={name}
-                    type="text"
+                    type="name"
                     name="name"
                     id="name"
                     pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
                     title="Имя может состоять только из букв, апострофа, тире и пробелов. Например Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan и т. п."
                     required
                     onChange={handleChange}
+                    sx={{
+                        '& .MuiInputLabel-root': {
+                            color: 'white',
+                        },
+                        '& .MuiInput-root:before': {
+                            borderBottom: "1px solid white"
+                        },
+                        '& .css-1480iag-MuiInputBase-root-MuiInput-root:hover:not(.Mui-disabled):before': {
+                            borderBottom: "2px solid white"
+                        },
+                        '& .css-1480iag-MuiInputBase-root-MuiInput-root:after': {
+                            borderBottom: "2px solid rgb(149, 241, 206)"
+                        },
+                        '& .css-1c2i806-MuiFormLabel-root-MuiInputLabel-root.Mui-focused': {
+                            color: 'rgb(149, 241, 206)'
+                        },
+                        '& .css-wgai2y-MuiFormLabel-asterisk': {
+                            display: 'none'
+                        },
+                        '& .css-1480iag-MuiInputBase-root-MuiInput-root': {
+                            color: 'rgb(149, 241, 206)'
+                        }
+                    }}
+                    autoComplete="none"
                 />
-                <label htmlFor="number" className="ContactForm__number">
-                    Number
-                </label>
-                <input
-                    className="ContactForm__input"
+                <TextField
+                    label="Number"
+                    variant="standard"
+                    className="LoginForm__input"
                     value={number}
-                    type="tel"
+                    type="number"
                     name="number"
                     id="number"
                     pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
                     title="Номер телефона должен состоять цифр и может содержать пробелы, тире, круглые скобки и может начинаться с +"
                     required
                     onChange={handleChange}
+                    sx={{
+                        '& .MuiInputLabel-root': {
+                            color: 'white',
+                        },
+                        '& .MuiInput-root:before': {
+                            borderBottom: "1px solid white"
+                        },
+                        '& .css-1480iag-MuiInputBase-root-MuiInput-root:hover:not(.Mui-disabled):before': {
+                            borderBottom: "2px solid white"
+                        },
+                        '& .css-1480iag-MuiInputBase-root-MuiInput-root:after': {
+                            borderBottom: "2px solid rgb(149, 241, 206)"
+                        },
+                        '& .css-1c2i806-MuiFormLabel-root-MuiInputLabel-root.Mui-focused': {
+                            color: 'rgb(149, 241, 206)'
+                        },
+                        '& .css-wgai2y-MuiFormLabel-asterisk': {
+                            display: 'none'
+                        },
+                        '& .css-1480iag-MuiInputBase-root-MuiInput-root': {
+                            color: 'rgb(149, 241, 206)'
+                        }
+                    }}
+                    // autoComplete="none"
                 />
                 <button type="submit"  className="ContactForm__button">Add contact</button>
             </form>

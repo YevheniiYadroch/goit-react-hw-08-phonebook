@@ -13,7 +13,6 @@ const authSlice = createSlice({
     initialState,
     extraReducers: {
         [authOperations.register.pending](state, action) {
-            console.log('pending');
         },
         [authOperations.register.fulfilled](state, action) {
             state.user = action.payload.user;
@@ -21,27 +20,26 @@ const authSlice = createSlice({
             state.isLoggedIn = true;
         },
         [authOperations.register.rejected](state, action) {
-            console.log(action.payload)
+            alert(action.payload);
         },
         [authOperations.login.pending](state, action) {
-            console.log('pending');
         },
         
         [authOperations.login.fulfilled](state, action) {
-            console.log('fulfiled');
-            console.log(action);
             state.user = action.payload.user;
             state.token = action.payload.token;
             state.isLoggedIn = true;
         },
         [authOperations.login.rejected](state, action) {
-             console.log('rejected')
-             console.log(action.payload)
+            alert('Неверный логин или пароль');
         },
         [authOperations.logout.fulfilled](state, action) {
             state.user = { name: null, email: null };
             state.token = null;
             state.isLoggedIn = false;
+        },
+        [authOperations.logout.rejected](state, action) {
+            alert(action.payload);
         },
         [authOperations.fetchCurrentUser.pending](state, {payload}) {
             state.fetchingCurrentUser = true;
