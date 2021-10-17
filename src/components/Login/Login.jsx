@@ -55,20 +55,20 @@ function Login() {
                         '& .MuiInput-root:before': {
                             borderBottom: "1px solid white"
                         },
-                        '& .css-1480iag-MuiInputBase-root-MuiInput-root:hover:not(.Mui-disabled):before': {
+                        '& .MuiInput-root:hover:not(.Mui-disabled):before': {
                             borderBottom: "2px solid white"
                         },
-                        '& .css-1480iag-MuiInputBase-root-MuiInput-root:after': {
+                        '& .MuiInput-root:after': {
                             borderBottom: "2px solid rgb(149, 241, 206)"
                         },
-                        '& .css-1c2i806-MuiFormLabel-root-MuiInputLabel-root.Mui-focused': {
+                        '& .MuiInputLabel-root.Mui-focused': {
                             color: 'rgb(149, 241, 206)'
                         },
-                        '& .css-wgai2y-MuiFormLabel-asterisk': {
+                        '& .MuiFormLabel-asterisk': {
                             display: 'none'
                         },
-                        '& .css-1480iag-MuiInputBase-root-MuiInput-root': {
-                            color: 'rgb(149, 241, 206)'
+                        '& .MuiInput-root': {
+                            color: 'white'
                         }
                     }}
                     autoComplete="none"
@@ -92,20 +92,20 @@ function Login() {
                         '& .MuiInput-root:before': {
                             borderBottom: "1px solid white"
                         },
-                        '& .css-1480iag-MuiInputBase-root-MuiInput-root:hover:not(.Mui-disabled):before': {
+                       '& .MuiInput-root:hover:not(.Mui-disabled):before': {
                             borderBottom: "2px solid white"
                         },
-                        '& .css-1480iag-MuiInputBase-root-MuiInput-root:after': {
+                        '& .MuiInput-root:after': {
                             borderBottom: "2px solid rgb(149, 241, 206)"
                         },
-                        '& .css-1c2i806-MuiFormLabel-root-MuiInputLabel-root.Mui-focused': {
+                        '& .MuiInputLabel-root.Mui-focused': {
                             color: 'rgb(149, 241, 206)'
                         },
-                        '& .css-wgai2y-MuiFormLabel-asterisk': {
+                        '& .MuiFormLabel-asterisk': {
                             display: 'none'
                         },
-                        '& .css-1480iag-MuiInputBase-root-MuiInput-root': {
-                            color: 'rgb(149, 241, 206)'
+                        '& .MuiInput-root': {
+                            color: 'white'
                         }
                     }}
                     autoComplete="none"
